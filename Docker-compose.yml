@@ -1,0 +1,12 @@
+version: '3'
+services:
+    passport-app:
+        build: .
+        depends_on:
+            - mongodb
+        ports:
+            - '3008:4000'
+    mongodb:
+        image: mongo
+        ports: ['27017:27017']
+        container_name: mongodb
